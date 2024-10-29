@@ -1,0 +1,21 @@
+Table G2: Summary stats, and boolean expressions
+                                                                TOPTOP           
+                                                      ___________________________
+                                                             trt           all   
+                                                      _________________ _________
+                                                         A        B     n    %   
+                                                      ________ ________ __ ______
+                                                      n   %    n   %             
+                                                      _ ______ _ ______          
+TOPTOP                                                                           
+  all                                                 6 100    6 100    12 100   
+  gender                                                                         
+    female                                            2  33.33 4  66.67  6  50   
+    male                                              4  66.67 2  33.33  6  50   
+  gender=='female'                                    2  33.33 4  66.67  6  50   
+  bodysys=='Skeletal'                                 1  16.67 2  33.33  3  25   
+  pat has bodysys=='Skeletal'                         1  16.67 2  33.33  3  25   
+  pat nothas bodysys=='Skeletal'                      5  83.33 4  66.67  9  75   
+  gender=='female' or bodysys=='Skeletal'             1  16.67 4  66.67  5  41.67
+  gender=='female' or pat has bodysys=='Skeletal'     3  50    5  83.33  8  66.67
+  gender=='female' or pat nothas bodysys=='Skeletal'  5  83.33 5  83.33 10  83.33

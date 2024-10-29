@@ -1,0 +1,44 @@
+
+title "Table G8: AE table, with chi-square (75-patient), & trtemgt derive" ;
+
+directoryref a="/home/robert/test" ;
+directoryref w="/home/robert/tmp/workdsets" ;
+
+inputdset asc a/patinfo3 patid trt 1*(patid) ;
+inputdset asc a/advevt3b patid visit bodysys prefterm severity ;
+thing pat uniqval(patid) a/patinfo3 ;
+
+********************************************
+vdt
+
+/// convertfileformat asciitobinary(a/advevt3b->a/advevt3b) colspecsinfirstrow ;
+
+inlist a/advevt3b ;
+if (not (visit==1))  deleterow ;
+select severity = max(severity) by patid bodysys prefterm ;
+sendoff(w/data2) patid bodysys prefterm severity ;
+
+
+inlist a/advevt3b ;
+if (not (visit>1))  deleterow ;
+select severity_p = max(severity) by patid bodysys prefterm ;
+sendoff(w/data3) patid bodysys prefterm severity_p ;
+
+inlist w/data2 w/data3 ;
+mergeby patid bodysys prefterm ;
+if (not (severity_p>severity or severity is null))  deleterow ;
+sendoff(w/ae_data) patid bodysys prefterm ;
+
+********************************************
+
+n~n(pat) ;
+
+printto "/home/robert/test/outp02" ;
+denom trt ;
+
+model chisq(thisrow?*trt*n)
+
+col (trt all)*(n %) pvalue ;
+row all have(w/ae_data) bodysys*(all nothave prefterm) ;
+
+

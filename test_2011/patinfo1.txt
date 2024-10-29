@@ -1,0 +1,13 @@
+{COLSPECS-THISLINE}, patid trt zcode color gender agegrp , int str int str str int , 1 4 6 , delimiter c , strnullflag 
+1,A,7,red,male,0
+2,A,7,red,male,0
+3,A,7,red,female,0
+4,A,7,red,female,1
+5,A,7,blue,male,1
+6,A,7,red,male,1
+7,B,8,red,female,0
+8,B,8,blue,female,0
+9,B,8,blue,male,0
+10,B,8,blue,male,1
+11,B,8,blue,female,1
+12,B,8,blue,female,1

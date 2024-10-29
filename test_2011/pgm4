@@ -1,0 +1,20 @@
+
+title "Table G3: AE, chi-square(not use format)" ;
+
+directoryref a="/home/robert/test" ;
+
+inputdset asc a/patinfo1 patid trt 1*(patid) ;
+inputdset asc a/ae1 patid bodysys prefterm ;
+thing pat uniqval(patid) a/patinfo1 ;
+n~n(pat) ;
+
+printto "/home/robert/test/output4" ;
+denom trt ;
+
+model chisq(thisrow?*trt*n)
+
+col (trt all)*(n %) pvalue ;
+row have(a/ae1) bodysys*(all nothave prefterm) ;
+
+
+

@@ -1,0 +1,36 @@
+Table E2: AE table, summary stats
+                               TOPTOP           
+                     ___________________________
+                            trt           all   
+                     _________________ _________
+                        A        B     n    %   
+                     ________ ________ __ ______
+                     n   %    n   %             
+                     _ ______ _ ______          
+TOPTOP                                          
+  all                6 100    6 100    12 100   
+  have               4  66.67 4  66.67  8  66.67
+  bodysys                                       
+    CNS                                         
+      all            4  66.67           4  33.33
+      nothave        2  33.3  6 100     8  66.67
+      prefterm                                  
+        Headache     3  50              3  25   
+        Jitters      1  16.67           1   8.33
+    Cardio                                      
+      all            1  16.67 1  16.67  2  16.67
+      nothave        5  83.3  5  83.3  10  83.33
+      prefterm                                  
+        MI           1  16.67 1  16.67  2  16.67
+        Stroke                1  16.67  1   8.33
+    Gastro                                      
+      all                     1  16.67  1   8.33
+      nothave        6 100    5  83.3  11  91.67
+      prefterm                                  
+        Bellyache             1  16.67  1   8.33
+    Skeletal                                    
+      all            1  16.67 2  33.33  3  25   
+      nothave        5  83.3  4  66.7   9  75   
+      prefterm                                  
+        Broken_Foot           2  33.33  2  16.67
+        Fracture     1  16.67 1  16.67  2  16.67

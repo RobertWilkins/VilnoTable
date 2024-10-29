@@ -1,0 +1,18 @@
+Table G1: Summary stats, and boolean expressions
+                                                                          TOPTOP                                   
+                                       ____________________________________________________________________________
+                                          all    gender=='male' gender=='female' or patid<10 pat has bodysys=='CNS'
+                                       _________ ______________ ____________________________ ______________________
+                                       n    %    n   %          n    %                       n   %                 
+                                       __ ______ _ _____        __ ______                    _ _____               
+TOPTOP                                                                                                             
+  all                                                                                                              
+    all                                12 100    6 50           11  91.67                    4 33.33               
+    trt=='A' or bodysys=='Skeletal'     6  50    5 41.67         5  41.67                    4 33.33               
+  trt                                                                                                              
+    A                                                                                                              
+      all                               6 100    4 66.67         6 100                       4 66.67               
+      trt=='A' or bodysys=='Skeletal'   4  66.67 4 66.67         4  66.67                    4 66.67               
+    B                                                                                                              
+      all                               6 100    2 33.33         5  83.3                                           
+      trt=='A' or bodysys=='Skeletal'   2  33.33 1 16.67         1  16.67                                          

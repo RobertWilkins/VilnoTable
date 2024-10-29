@@ -1,0 +1,35 @@
+Table G3: AE, chi-square(not use format)
+                                  TOPTOP              
+                     _________________________________
+                            trt          all    pvalue
+                     _________________ ________ ______
+                        A        B     n    %         
+                     ________ ________ __ _____       
+                     n   %    n   %                   
+                     _ ______ _ ______                
+TOPTOP                                                
+  have               4  66.67 4  66.67  8 66.67 0.5403
+  bodysys                                             
+    CNS                                               
+      all            4  66.67           4 33.33 0.0662
+      nothave        2  33.3  6 100     8 66.67 0.0662
+      prefterm                                        
+        Headache     3  50              3 25    0.1824
+        Jitters      1  16.67           1  8.33 1     
+    Cardio                                            
+      all            1  16.67 1  16.67  2 16.67 0.4386
+      nothave        5  83.3  5  83.3  10 83.33 0.4386
+      prefterm                                        
+        MI           1  16.67 1  16.67  2 16.67 0.4386
+        Stroke                1  16.67  1  8.33 1     
+    Gastro                                            
+      all                     1  16.67  1  8.33 1     
+      nothave        6 100    5  83.3  11 91.67 1     
+      prefterm                                        
+        Bellyache             1  16.67  1  8.33 1     
+    Skeletal                                          
+      all            1  16.67 2  33.33  3 25    1     
+      nothave        5  83.3  4  66.7   9 75    1     
+      prefterm                                        
+        Broken_Foot           2  33.33  2 16.67 0.4386
+        Fracture     1  16.67 1  16.67  2 16.67 0.4386

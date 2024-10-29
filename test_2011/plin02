@@ -1,0 +1,22 @@
+
+title "Table A2: Example of linear model stats in a table" ;
+
+directoryref a="/home/robert/test" ;
+
+inputdset asc a/data_lm2 region temp cscore ;
+
+categorical region ;
+continuous temp cscore ;
+
+printto "/home/robert/test/out_lin02" ;
+
+
+model lm(cscore = region-1+temp) ;
+
+col region*all*( est_pw t_pw pval_pw ) all*(est t_c pval_c) all*(fvalue pvalue) ;
+row region ;
+
+
+label all "Pairwise" "Model Coefficient" "F-statistic"    fvalue "F" pvalue "P-value"   region "Region"
+      est_pw "Estimate"  t_pw "T"  pval_pw "P-value"      est "Estimate" t_c "T" pval_c "P-value"  ;
+

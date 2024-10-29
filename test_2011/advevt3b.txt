@@ -1,0 +1,112 @@
+{COLSPECS-THISLINE}, patid visit bodysys prefterm severity, int int str str int , 20 20 , delimiter c , strnullflag 
+1,1,Neurological,Headache,1
+1,3,Neurological,Headache,3
+1,4,Neurological,Headache,3
+2,1,Neurological,Headache,1
+4,2,Neurological,Headache,1
+7,1,Neurological,Headache,2
+7,3,Neurological,Headache,1
+24,1,Neurological,Headache,1
+24,4,Neurological,Headache,1
+25,2,Neurological,Headache,3
+25,4,Neurological,Headache,2
+26,2,Neurological,Headache,1
+26,3,Neurological,Headache,1
+28,4,Neurological,Headache,3
+30,2,Neurological,Headache,3
+30,2,Neurological,Headache,3
+32,3,Neurological,Headache,2
+34,1,Neurological,Headache,2
+34,2,Neurological,Headache,3
+34,3,Neurological,Headache,1
+35,4,Neurological,Headache,1
+36,2,Neurological,Headache,2
+36,3,Neurological,Headache,2
+37,1,Neurological,Headache,3
+37,4,Neurological,Headache,2
+38,2,Neurological,Headache,1
+39,2,Neurological,Headache,1
+40,3,Neurological,Headache,3
+41,3,Neurological,Headache,3
+41,4,Neurological,Headache,3
+42,1,Neurological,Headache,3
+42,4,Neurological,Headache,3
+43,2,Neurological,Headache,2
+47,4,Neurological,Headache,1
+50,1,Neurological,Headache,1
+50,1,Neurological,Headache,2
+50,3,Neurological,Headache,3
+53,1,Neurological,Headache,2
+55,1,Neurological,Headache,2
+55,2,Neurological,Headache,2
+60,3,Neurological,Headache,1
+70,4,Neurological,Headache,1
+75,1,Neurological,Headache,3
+75,4,Neurological,Headache,3
+1,4,Neurological,Agitation,1
+25,1,Neurological,Agitation,2
+25,2,Neurological,Agitation,2
+25,3,Neurological,Agitation,3
+25,4,Neurological,Agitation,1
+26,2,Neurological,Agitation,3
+27,3,Neurological,Agitation,1
+70,4,Neurological,Agitation,3
+75,2,Neurological,Agitation,2
+75,3,Neurological,Agitation,2
+11,2,Cardiovascular,MI,3
+51,3,Cardiovascular,MI,3
+55,2,Cardiovascular,MI,3
+55,4,Cardiovascular,MI,3
+60,2,Cardiovascular,MI,3
+70,4,Cardiovascular,MI,3
+70,3,Cardiovascular,Blood Clot,3
+70,4,Cardiovascular,Blood Clot,3
+11,4,Cardiovascular,Stroke,3
+37,4,Cardiovascular,Stroke,3
+69,4,Cardiovascular,Stroke,3
+1,2,Gastrointestinal,Flatulence,2
+2,2,Gastrointestinal,Flatulence,2
+3,2,Gastrointestinal,Flatulence,2
+4,2,Gastrointestinal,Flatulence,2
+5,2,Gastrointestinal,Flatulence,2
+6,2,Gastrointestinal,Flatulence,1
+7,2,Gastrointestinal,Flatulence,1
+8,2,Gastrointestinal,Flatulence,1
+9,2,Gastrointestinal,Flatulence,1
+10,2,Gastrointestinal,Flatulence,1
+41,2,Gastrointestinal,Flatulence,1
+42,2,Gastrointestinal,Flatulence,1
+43,2,Gastrointestinal,Flatulence,1
+44,2,Gastrointestinal,Flatulence,1
+45,2,Gastrointestinal,Flatulence,1
+1,2,Gastrointestinal,Cramps,1
+3,1,Gastrointestinal,Cramps,1
+3,4,Gastrointestinal,Cramps,2
+5,2,Gastrointestinal,Cramps,2
+41,2,Gastrointestinal,Cramps,1
+44,3,Gastrointestinal,Cramps,2
+44,4,Gastrointestinal,Cramps,2
+47,2,Gastrointestinal,Cramps,1
+70,1,Gastrointestinal,Cramps,1
+70,2,Gastrointestinal,Cramps,1
+1,3,Gastrointestinal,Ulcer,3
+11,3,Gastrointestinal,Ulcer,3
+10,3,Gastrointestinal,Bellyache,2
+11,3,Gastrointestinal,Bellyache,2
+1,3,Skeletal,Vertebral Fracture,2
+3,3,Skeletal,Vertebral Fracture,2
+6,1,Skeletal,Vertebral Fracture,2
+6,4,Skeletal,Vertebral Fracture,3
+8,3,Skeletal,Vertebral Fracture,2
+10,4,Skeletal,Vertebral Fracture,2
+11,3,Skeletal,Vertebral Fracture,3
+20,4,Skeletal,Vertebral Fracture,2
+26,4,Skeletal,Vertebral Fracture,2
+27,4,Skeletal,Vertebral Fracture,2
+30,3,Skeletal,Vertebral Fracture,2
+51,3,Skeletal,Vertebral Fracture,2
+40,2,Skeletal,Broken Leg,3
+70,4,Skeletal,Broken Leg,3
+20,3,Skeletal,Skull Fracture,3
+19,4,Cancer,Melanoma,3
+28,4,Cancer,Lung Cancer,3

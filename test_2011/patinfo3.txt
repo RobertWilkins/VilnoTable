@@ -1,0 +1,76 @@
+{COLSPECS-THISLINE}, patid trt gender status reasdisc , int int str str str , 7 20 20 , delimiter c , strnullflag 
+1,0,Female,Completed Study,
+2,0,Female,Completed Study,
+3,0,Female,Completed Study,
+4,0,Female,Completed Study,
+5,0,Female,Completed Study,
+6,0,Female,Completed Study,
+7,0,Female,Completed Study,
+8,0,Female,Completed Study,
+9,0,Female,Completed Study,
+10,0,Female,Discontinued,Death
+11,0,Female,Discontinued,Patient Choice
+12,0,Female,Discontinued,Death
+13,0,Female,Discontinued,Patient Choice
+14,0,Female,Enrolled Phase IV,
+15,0,Female,Completed Study,
+16,0,Female,Completed Study,
+17,0,Female,Completed Study,
+18,0,Female,Completed Study,
+19,0,Female,Completed Study,
+20,0,Female,Completed Study,
+21,0,Male,Completed Study,
+22,0,Male,Completed Study,
+23,0,Male,Discontinued,Death
+24,0,Male,Discontinued,Death
+25,0,Male,Discontinued,Death
+26,20,Female,Discontinued,Death
+27,20,Female,Discontinued,Lost to Follow-up
+28,20,Female,Discontinued,Lost to Follow-up
+29,20,Female,Discontinued,Lost to Follow-up
+30,20,Female,Discontinued,Lost to Follow-up
+31,20,Female,Discontinued,Physician Advice
+32,20,Female,Discontinued,Patient Choice
+33,20,Female,Discontinued,Death
+34,20,Female,Discontinued,Death
+35,20,Female,Discontinued,Lost to Follow-up
+36,20,Female,Discontinued,Patient Choice
+37,20,Female,Discontinued,Lost to Follow-up
+38,20,Female,Discontinued,Lost to Follow-up
+39,20,Female,Discontinued,Death
+40,20,Female,Discontinued,Death
+41,20,Female,Completed Study,
+42,20,Female,Completed Study,
+43,20,Female,Completed Study,
+44,20,Female,Completed Study,
+45,20,Female,Completed Study,
+46,20,Male,Completed Study,
+47,20,Male,Enrolled Phase IV,
+48,20,Male,Enrolled Phase IV,
+49,20,Male,Enrolled Phase IV,
+50,20,Male,Enrolled Phase IV,
+51,40,Female,Completed Study,
+52,40,Female,Completed Study,
+53,40,Female,Completed Study,
+54,40,Female,Completed Study,
+55,40,Female,Completed Study,
+56,40,Female,Completed Study,
+57,40,Female,Completed Study,
+58,40,Female,Completed Study,
+59,40,Female,Completed Study,
+60,40,Female,Completed Study,
+61,40,Female,Completed Study,
+62,40,Female,Completed Study,
+63,40,Female,Completed Study,
+64,40,Female,Completed Study,
+65,40,Female,Completed Study,
+66,40,Female,Completed Study,
+67,40,Female,Completed Study,
+68,40,Female,Completed Study,
+69,40,Female,Completed Study,
+70,40,Female,Completed Study,
+71,40,Male,Completed Study,
+72,40,Male,Completed Study,
+73,40,Male,Completed Study,
+74,40,Male,Completed Study,
+75,40,Male,Completed Study,

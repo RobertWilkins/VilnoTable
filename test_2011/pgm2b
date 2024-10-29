@@ -1,0 +1,15 @@
+
+title "Table E3: AE table, summary stats, TRT*GENDER, denom=trt" ;
+
+directoryref a="/home/robert/test" ;
+
+inputdset asc a/patinfo1 patid trt gender  1*(patid) ;
+inputdset asc a/ae1 patid bodysys prefterm ;
+thing pat uniqval(patid) a/patinfo1 ;
+n~n(pat) ;
+
+printto "/home/robert/test/output2b" ;
+denom trt ;
+col (trt*gender all)*(n %) ;
+row all have(a/ae1) bodysys*(all nothave prefterm) ;
+

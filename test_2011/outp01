@@ -1,0 +1,47 @@
+Table A3: AE table, with chi-square (75-patient dbase)
+                                             TOPTOP                  
+                            _________________________________________
+                                    trt             all      pvalue  
+                            ____________________ _________ __________
+                               0     20     40   n    %              
+                            ______ ______ ______ __ ______           
+                            n   %  n   %  n   %                      
+                            __ ___ __ ___ __ ___                     
+TOPTOP                                                               
+  all                       25 100 25 100 25 100 75 100    NaN       
+  have                      14  56 19  76  6  24 39  52      0.001017
+  bodysys                                                            
+    Cancer                                                           
+      all                    1   4  1   4         2   2.67   0.5983  
+      nothave               24  96 24  96 25 100 73  97.33   0.5983  
+      prefterm                                                       
+        Lung Cancer                 1   4         1   1.33   0.3629  
+        Melanoma             1   4                1   1.33   0.3629  
+    Cardiovascular                                                   
+      all                    1   4  1   4  5  20  7   9.33   0.0804  
+      nothave               24  96 24  96 20  80 68  90.67   0.0804  
+      prefterm                                                       
+        Blood Clot                         1   4  1   1.33   0.3629  
+        MI                   1   4         4  16  5   6.67   0.0617  
+        Stroke               1   4  1   4  1   4  3   4      1       
+    Gastrointestinal                                                 
+      all                   11  44  6  24        17  22.67   0.0010  
+      nothave               14  56 19  76 25 100 58  77.33   0.0010  
+      prefterm                                                       
+        Bellyache            2   8                2   2.67   0.1281  
+        Cramps               3  12  3  12         6   8      0.1958  
+        Flatulence          10  40  5  20        15  20      0.0019  
+        Ulcer                2   8                2   2.67   0.1281  
+    Neurological                                                     
+      all                    3  12 15  60  3  12 21  28      0.0001  
+      nothave               22  88 10  40 22  88 54  72      0.0001  
+      prefterm                                                       
+        Agitation            2   8  2   8  2   8  6   8      1       
+        Headache             3  12 14  56  2   8 19  25.33   0.0001  
+    Skeletal                                                         
+      all                    7  28  4  16  2   8 13  17.33   0.1707  
+      nothave               18  72 21  84 23  92 62  82.67   0.1707  
+      prefterm                                                       
+        Broken Leg                  1   4  1   4  2   2.67   0.5983  
+        Skull Fracture       1   4                1   1.33   0.3629  
+        Vertebral Fracture   7  28  3  12  1   4 11  14.67   0.0506  

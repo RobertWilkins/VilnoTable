@@ -1,0 +1,18 @@
+
+# first test pgm for lm() testing , Mar 01 
+
+directoryref a="/home/robert/test" ;
+
+inputdset asc a/data_lm1 c1 c2 a b y v1 ;
+
+categorical c1 c2 a b ;
+continuous y v1 ;
+
+
+printto "/home/robert/test/out_lin01" ;
+subpop c1 c2 ;
+model lm(y = a+b+b*a+v1+a*b*v1) ;
+
+col a*b*( t_pw pval_pw )  ;
+row c1*c2*a*b ;
+

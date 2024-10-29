@@ -1,0 +1,78 @@
+{COLSPECS-THISLINE}, patid bodysys prefterm , int str str , 20 20 , delimiter c , strnullflag 
+1,Neurological,Headache
+4,Neurological,Headache
+25,Neurological,Headache
+26,Neurological,Headache
+26,Neurological,Headache
+28,Neurological,Headache
+30,Neurological,Headache
+32,Neurological,Headache
+34,Neurological,Headache
+35,Neurological,Headache
+36,Neurological,Headache
+38,Neurological,Headache
+39,Neurological,Headache
+40,Neurological,Headache
+41,Neurological,Headache
+41,Neurological,Headache
+43,Neurological,Headache
+47,Neurological,Headache
+50,Neurological,Headache
+60,Neurological,Headache
+70,Neurological,Headache
+1,Neurological,Agitation
+25,Neurological,Agitation
+26,Neurological,Agitation
+27,Neurological,Agitation
+70,Neurological,Agitation
+75,Neurological,Agitation
+11,Cardiovascular,MI
+51,Cardiovascular,MI
+55,Cardiovascular,MI
+60,Cardiovascular,MI
+70,Cardiovascular,MI
+70,Cardiovascular,Blood Clot
+11,Cardiovascular,Stroke
+37,Cardiovascular,Stroke
+69,Cardiovascular,Stroke
+1,Gastrointestinal,Flatulence
+2,Gastrointestinal,Flatulence
+3,Gastrointestinal,Flatulence
+4,Gastrointestinal,Flatulence
+5,Gastrointestinal,Flatulence
+6,Gastrointestinal,Flatulence
+7,Gastrointestinal,Flatulence
+8,Gastrointestinal,Flatulence
+9,Gastrointestinal,Flatulence
+10,Gastrointestinal,Flatulence
+41,Gastrointestinal,Flatulence
+42,Gastrointestinal,Flatulence
+43,Gastrointestinal,Flatulence
+44,Gastrointestinal,Flatulence
+45,Gastrointestinal,Flatulence
+1,Gastrointestinal,Cramps
+3,Gastrointestinal,Cramps
+5,Gastrointestinal,Cramps
+41,Gastrointestinal,Cramps
+44,Gastrointestinal,Cramps
+47,Gastrointestinal,Cramps
+1,Gastrointestinal,Ulcer
+11,Gastrointestinal,Ulcer
+10,Gastrointestinal,Bellyache
+11,Gastrointestinal,Bellyache
+1,Skeletal,Vertebral Fracture
+3,Skeletal,Vertebral Fracture
+6,Skeletal,Vertebral Fracture
+8,Skeletal,Vertebral Fracture
+10,Skeletal,Vertebral Fracture
+11,Skeletal,Vertebral Fracture
+20,Skeletal,Vertebral Fracture
+26,Skeletal,Vertebral Fracture
+27,Skeletal,Vertebral Fracture
+30,Skeletal,Vertebral Fracture
+51,Skeletal,Vertebral Fracture
+40,Skeletal,Broken Leg
+70,Skeletal,Broken Leg
+20,Skeletal,Skull Fracture
+19,Cancer,Melanoma
+28,Cancer,Lung Cancer

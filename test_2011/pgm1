@@ -1,0 +1,15 @@
+
+title "Table E1:  N and % simple example" ;
+
+directoryref a="/home/robert/test" ;
+
+inputdset asc a/patinfo1 patid trt 1*(patid) ;
+inputdset asc a/ae1 patid bodysys prefterm ;
+thing pat uniqval(patid) a/patinfo1 ;
+n~n(pat) ;
+
+printto "/home/robert/test/output1" ;
+denom trt ;
+col trt*(n %) ;
+row bodysys*prefterm ;
+

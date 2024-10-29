@@ -1,0 +1,18 @@
+{FORMAT-FILE}
+
+format bodysysf int 
+1 = "Skeletal"
+2 = "Gastro"
+3 = "Cardio"
+4 = "CNS"
+;
+
+format ptermf int 
+1 = "Headache"
+2 = "Jitters"
+3 = "Bellyache"
+4 = "Fracture"
+5 = "Broken_Foot"
+6 = "MI"
+7 = "Stroke"
+;

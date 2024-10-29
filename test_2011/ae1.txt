@@ -1,0 +1,14 @@
+{COLSPECS-THISLINE}, patid bodysys prefterm , int str str , 15 15 , delimiter c , strnullflag 
+1,CNS,Headache
+1,CNS,Headache
+2,Cardio,MI
+2,CNS,Jitters
+2,Skeletal,Fracture
+5,CNS,Headache
+6,CNS,Headache
+7,Cardio,Stroke
+7,Cardio,MI
+8,Skeletal,Broken_Foot
+10,Skeletal,Broken_Foot
+10,Skeletal,Fracture
+11,Gastro,Bellyache

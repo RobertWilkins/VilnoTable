@@ -1,0 +1,17 @@
+
+title "Table G1: Summary stats, and boolean expressions" ;
+
+directoryref a="/home/robert/test" ;
+
+inputdset asc a/patinfo1 patid trt gender 1*(patid) ;
+inputdset asc a/ae1 patid bodysys prefterm ;
+thing pat uniqval(patid) a/patinfo1 ;
+n~n(pat) ;
+
+printto "/home/robert/test/output6" ;
+denom trt ;
+
+
+col (all [gender=="male"] [gender=="female" or patid<10] [pat has bodysys=="CNS"] )*(n %) ;
+row (all trt)*(all [trt=="A" or bodysys=="Skeletal"]) ;
+

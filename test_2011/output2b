@@ -1,0 +1,40 @@
+Table E3: AE table, summary stats, TRT*GENDER, denom=trt
+                                      TOPTOP                  
+                     _________________________________________
+                                   trt                  all   
+                     _______________________________ _________
+                            A               B        n    %   
+                     _______________ _______________ __ ______
+                         gender          gender               
+                     _______________ _______________          
+                     female   male   female   male            
+                     _______ _______ _______ _______          
+                     n   %   n   %   n   %   n   %            
+                     _ _____ _ _____ _ _____ _ _____          
+TOPTOP                                                        
+  all                2 33.33 4 66.67 4 66.67 2 33.33 12 100   
+  have                       4 66.67 3 50    1 16.67  8  66.67
+  bodysys                                                     
+    CNS                                                       
+      all                    4 66.67                  4  33.33
+      nothave        2 33.33 0  0    4 66.67 2 33.33  8  66.67
+      prefterm                                                
+        Headache             3 50                     3  25   
+        Jitters              1 16.67                  1   8.33
+    Cardio                                                    
+      all                    1 16.67 1 16.67          2  16.67
+      nothave        2 33.33 3 50    3 50    2 33.33 10  83.33
+      prefterm                                                
+        MI                   1 16.67 1 16.67          2  16.67
+        Stroke                       1 16.67          1   8.33
+    Gastro                                                    
+      all                            1 16.67          1   8.33
+      nothave        2 33.33 4 66.67 3 50    2 33.33 11  91.67
+      prefterm                                                
+        Bellyache                    1 16.67          1   8.33
+    Skeletal                                                  
+      all                    1 16.67 1 16.67 1 16.67  3  25   
+      nothave        2 33.33 3 50    3 50    1 16.67  9  75   
+      prefterm                                                
+        Broken_Foot                  1 16.67 1 16.67  2  16.67
+        Fracture             1 16.67         1 16.67  2  16.67

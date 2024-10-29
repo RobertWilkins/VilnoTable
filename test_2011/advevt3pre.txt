@@ -1,0 +1,320 @@
+
+AE categories :
+Neurological : Headache Agitation 
+Skeletal:  "Vertebral Fracture"  "Broken Leg"  "Skull Fracture"
+
+Cancer: "Leukemia"  "Lung Cancer" 
+Gastrointestinal: Ulcer Bellyache Cramps Flatulence
+
+Cardiovascular: MI Stroke  "Blood Clot"
+
+
+3 groups: 0:patients 1-25    20:patients 26-50    40:patients 51-75
+
+,Neurological,Headache
+
+
+1,Neurological,Headache
+4,Neurological,Headache
+25,Neurological,Headache
+26,Neurological,Headache
+26,Neurological,Headache
+28,Neurological,Headache
+30,Neurological,Headache
+32,Neurological,Headache
+34,Neurological,Headache
+35,Neurological,Headache
+36,Neurological,Headache
+38,Neurological,Headache
+39,Neurological,Headache
+40,Neurological,Headache
+41,Neurological,Headache
+41,Neurological,Headache
+43,Neurological,Headache
+47,Neurological,Headache
+50,Neurological,Headache
+60,Neurological,Headache
+70,Neurological,Headache
+
+
+patid,visit,bodysys,prefterm,severity
+1,1,Neurological,Headache,1
+1,3,Neurological,Headache,3
+1,4,Neurological,Headache,3
+2,1,Neurological,Headache,1
+
+4,2,Neurological,Headache,1
+7,1,Neurological,Headache,2
+7,3,Neurological,Headache,1
+
+24,1,Neurological,Headache,1
+24,4,Neurological,Headache,1
+
+25,2,Neurological,Headache,3
+25,4,Neurological,Headache,2
+26,2,Neurological,Headache,1
+26,3,Neurological,Headache,1
+28,4,Neurological,Headache,3
+30,2,Neurological,Headache,3
+30,2,Neurological,Headache,3
+
+32,3,Neurological,Headache,2
+34,1,Neurological,Headache,2
+34,2,Neurological,Headache,3
+34,3,Neurological,Headache,1
+35,4,Neurological,Headache,1
+36,2,Neurological,Headache,2
+36,3,Neurological,Headache,2
+37,1,Neurological,Headache,3
+37,4,Neurological,Headache,2
+38,2,Neurological,Headache,1
+39,2,Neurological,Headache,1
+
+40,3,Neurological,Headache,3
+41,3,Neurological,Headache,3
+41,4,Neurological,Headache,3
+42,1,Neurological,Headache,3
+42,4,Neurological,Headache,3
+43,2,Neurological,Headache,2
+47,4,Neurological,Headache,1
+
+50,1,Neurological,Headache,1
+50,1,Neurological,Headache,2
+50,3,Neurological,Headache,3
+
+53,1,Neurological,Headache,2
+55,1,Neurological,Headache,2
+55,2,Neurological,Headache,2
+
+60,3,Neurological,Headache,1
+70,4,Neurological,Headache,1
+
+75,1,Neurological,Headache,3
+75,4,Neurological,Headache,3
+
+
+
+
+#####################################################
+
+
+
+
+1,Neurological,Agitation
+25,Neurological,Agitation
+26,Neurological,Agitation
+27,Neurological,Agitation
+70,Neurological,Agitation
+75,Neurological,Agitation
+
+
+
+1,4,Neurological,Agitation,1
+
+25,1,Neurological,Agitation,2
+25,2,Neurological,Agitation,2
+25,3,Neurological,Agitation,3
+25,4,Neurological,Agitation,1
+
+26,2,Neurological,Agitation,3
+27,3,Neurological,Agitation,1
+70,4,Neurological,Agitation,3
+75,2,Neurological,Agitation,2
+75,3,Neurological,Agitation,2
+
+
+
+#####################################################
+
+
+11,Cardiovascular,MI
+51,Cardiovascular,MI
+55,Cardiovascular,MI
+60,Cardiovascular,MI
+70,Cardiovascular,MI
+
+
+
+11,2,Cardiovascular,MI,3
+51,3,Cardiovascular,MI,3
+55,2,Cardiovascular,MI,3
+55,4,Cardiovascular,MI,3
+60,2,Cardiovascular,MI,3
+70,4,Cardiovascular,MI,3
+
+
+
+#####################################################
+
+70,Cardiovascular,Blood Clot
+
+70,3,Cardiovascular,Blood Clot,3
+70,4,Cardiovascular,Blood Clot,3
+
+
+
+11,Cardiovascular,Stroke
+37,Cardiovascular,Stroke
+69,Cardiovascular,Stroke
+
+11,4,Cardiovascular,Stroke,3
+37,4,Cardiovascular,Stroke,3
+69,4,Cardiovascular,Stroke,3
+
+
+
+#####################################################
+
+Gastrointestinal: Ulcer Bellyache Cramps Flatulence
+
+
+1,Gastrointestinal,Flatulence
+2,Gastrointestinal,Flatulence
+3,Gastrointestinal,Flatulence
+4,Gastrointestinal,Flatulence
+5,Gastrointestinal,Flatulence
+6,Gastrointestinal,Flatulence
+7,Gastrointestinal,Flatulence
+8,Gastrointestinal,Flatulence
+9,Gastrointestinal,Flatulence
+10,Gastrointestinal,Flatulence
+41,Gastrointestinal,Flatulence
+42,Gastrointestinal,Flatulence
+43,Gastrointestinal,Flatulence
+44,Gastrointestinal,Flatulence
+45,Gastrointestinal,Flatulence
+
+
+
+1,2,Gastrointestinal,Flatulence,2
+2,2,Gastrointestinal,Flatulence,2
+3,2,Gastrointestinal,Flatulence,2
+4,2,Gastrointestinal,Flatulence,2
+5,2,Gastrointestinal,Flatulence,2
+6,2,Gastrointestinal,Flatulence,1
+7,2,Gastrointestinal,Flatulence,1
+8,2,Gastrointestinal,Flatulence,1
+9,2,Gastrointestinal,Flatulence,1
+10,2,Gastrointestinal,Flatulence,1
+41,2,Gastrointestinal,Flatulence,1
+42,2,Gastrointestinal,Flatulence,1
+43,2,Gastrointestinal,Flatulence,1
+44,2,Gastrointestinal,Flatulence,1
+45,2,Gastrointestinal,Flatulence,1
+
+
+#####################################################
+
+
+1,Gastrointestinal,Cramps
+3,Gastrointestinal,Cramps
+5,Gastrointestinal,Cramps
+41,Gastrointestinal,Cramps
+44,Gastrointestinal,Cramps
+47,Gastrointestinal,Cramps
+
+
+
+1,2,Gastrointestinal,Cramps,1
+3,1,Gastrointestinal,Cramps,1
+3,4,Gastrointestinal,Cramps,2
+5,2,Gastrointestinal,Cramps,2
+41,2,Gastrointestinal,Cramps,1
+44,3,Gastrointestinal,Cramps,2
+44,4,Gastrointestinal,Cramps,2
+47,2,Gastrointestinal,Cramps,1
+70,1,Gastrointestinal,Cramps,1
+70,2,Gastrointestinal,Cramps,1
+
+
+#####################################################
+
+1,Gastrointestinal,Ulcer
+11,Gastrointestinal,Ulcer
+
+1,3,Gastrointestinal,Ulcer,3
+11,3,Gastrointestinal,Ulcer,3
+
+
+
+
+10,Gastrointestinal,Bellyache
+11,Gastrointestinal,Bellyache
+
+10,3,Gastrointestinal,Bellyache,2
+11,3,Gastrointestinal,Bellyache,2
+
+
+#####################################################
+
+Skeletal:  "Vertebral Fracture"  "Broken Leg"  "Skull Fracture"
+
+
+1,Skeletal,Vertebral Fracture
+3,Skeletal,Vertebral Fracture
+6,Skeletal,Vertebral Fracture
+8,Skeletal,Vertebral Fracture
+10,Skeletal,Vertebral Fracture
+11,Skeletal,Vertebral Fracture
+20,Skeletal,Vertebral Fracture
+
+26,Skeletal,Vertebral Fracture
+27,Skeletal,Vertebral Fracture
+30,Skeletal,Vertebral Fracture
+
+51,Skeletal,Vertebral Fracture
+
+
+
+1,3,Skeletal,Vertebral Fracture,2
+3,3,Skeletal,Vertebral Fracture,2
+6,1,Skeletal,Vertebral Fracture,2
+6,4,Skeletal,Vertebral Fracture,3
+8,3,Skeletal,Vertebral Fracture,2
+10,4,Skeletal,Vertebral Fracture,2
+11,3,Skeletal,Vertebral Fracture,3
+20,4,Skeletal,Vertebral Fracture,2
+
+26,4,Skeletal,Vertebral Fracture,2
+27,4,Skeletal,Vertebral Fracture,2
+30,3,Skeletal,Vertebral Fracture,2
+
+51,3,Skeletal,Vertebral Fracture,2
+
+
+#############################################
+
+40,Skeletal,Broken Leg
+70,Skeletal,Broken Leg
+
+40,2,Skeletal,Broken Leg,3
+70,4,Skeletal,Broken Leg,3
+
+
+20,Skeletal,Skull Fracture
+
+20,3,Skeletal,Skull Fracture,3
+
+#############################################
+
+Cancer: "Leukemia"  "Lung Cancer" 
+
+19,Cancer,Melanoma
+
+19,4,Cancer,Melanoma,3
+
+
+28,Cancer,Lung Cancer
+
+28,4,Cancer,Lung Cancer,3
+
+
+
+
+
+
+
+
+
+
+

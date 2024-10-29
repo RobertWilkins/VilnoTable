@@ -1,0 +1,15 @@
+
+title "Table A1: Example of 4 categorical variables: summary stats and chi-square" ;
+
+directoryref a="/home/robert/test" ;
+
+inputdset asc a/patinfo1 patid trt zcode color gender agegrp 1*(patid) ;
+inputdset asc a/ae1 patid bodysys prefterm ;
+# leave out pat defn for this test program 
+
+printto "/home/robert/test/output3" ;
+denom trt ;
+model chisq(thisrowcat*trt*n)
+col trt*(n %) chisqvalue pvalue ;
+row zcode color gender agegrp ;
+

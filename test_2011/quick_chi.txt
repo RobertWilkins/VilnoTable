@@ -1,0 +1,9 @@
+
+to do a quick chisq test , when proofreading the test output :
+
+g <- matrix(c(7,3,1,18,22,24),2,byrow=TRUE)     byrow=FALSE is default
+  7   3   1 
+ 18  22  24
+
+chisq.test(g)
+
