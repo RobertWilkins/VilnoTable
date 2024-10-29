@@ -1,0 +1,49 @@
+
+### Copyright 2023 : Robert Wilkins, graduated from Newton North High School 
+###                  in 1984, in Massachusetts, USA 
+
+
+
+
+screenrows <- function(df,colname,clev) {
+df3 <- df[df[[colname]]==clev,]
+df3
+}
+
+
+t_test <- function(df,cont_varname,groupcol,clev1,clev2) {
+subgroup1 <- screenrows(df,groupcol,clev1)
+subgroup2 <- screenrows(df,groupcol,clev2)
+ttest_object <- t.test(subgroup1[[cont_varname]],subgroup2[[cont_varname]])
+ttest_object
+}
+
+
+ttest_wrapper <- function(ttest_obj) {
+p_value <- ttest_obj[["p.value"]]
+t_value <- ttest_obj[["statistic"]][["t"]]
+t_dframe <- data.frame(t_stat=t_value,pval_tt=p_value)
+g <- list()
+g[["tstat_and_pval"]] <- list()
+g[["tstat_and_pval"]][["voidparam"]] <- t_dframe
+g
+}
+
+
+quartile_wrapper <- function(quartile_obj) {
+min_val <- quartile_obj[["0%"]]
+q1_val  <- quartile_obj[["25%"]]
+med_val <- quartile_obj[["50%"]]
+q3_val  <- quartile_obj[["75%"]]
+max_val <- quartile_obj[["100%"]]
+q_dframe <- data.frame(q_min=min_val,q1=q1_val,q_median=med_val,
+                          q3=q3_val,q_max=max_val)
+g <- list()
+g[["q1q3median"]] <- list()
+g[["q1q3median"]][["voidparam"]] <- q_dframe 
+g
+}
+
+
+
+

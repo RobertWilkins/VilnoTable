@@ -1,0 +1,175 @@
+
+### Copyright 2023 : Robert Wilkins, graduated from Newton North High School 
+###                  in 1984, in Massachusetts, USA 
+
+
+
+### string with blanks , divide into the non-blank pieces 
+
+divide_by_blanks <- function(x) {
+x2 <- unlist(strsplit(x,"\\ +"))
+m <- length(x2)
+if (m==1 & x2[1]=="") x2 <- character()
+else if (m>=1 & x2[1]=="") x2 <- x2[2:m]
+x2
+}
+
+
+strnullcode_apply <- function(vec1,word) {
+vec2 <- vec1 
+for (i in 1:length(vec1)) 
+  if (vec2[i]==word) vec2[i] <- NA 
+vec2
+}  # end function strnullcode_apply()
+
+
+
+zerorows_inasciifile <- function(vnvec,dtvec) {
+df1 <- list()
+for (i in 1:length(dtvec)) {
+  if      (dtvec[i]=="int") df1[[i]] <- integer()
+  else if (dtvec[i]=="flo") df1[[i]] <- numeric()
+  else if (dtvec[i]=="str") df1[[i]] <- character()
+}
+names(df1) <- vnvec
+df1 <- data.frame(df1,stringsAsFactors=FALSE)
+df1
+}  # end function zerorows_inasciifile()
+
+
+
+
+##################################################
+
+read_ascii_datafile <- function(inputfilename) {
+lines <- readLines(inputfilename)
+specline <- lines[1]
+lines2 <- lines[2:length(lines)]
+spec2 <- unlist(strsplit(specline,"\\,"))
+vnvec <- divide_by_blanks(spec2[2])
+dtvec <- divide_by_blanks(spec2[3])
+delimvec <- divide_by_blanks(spec2[5])
+strnullvec <- divide_by_blanks(spec2[6])
+delim <- delimvec[2]
+if (delim=="c") delim <- ","
+delimplus <- paste("\\",delim,sep="")
+strnull <- ""
+if (length(strnullvec)==2) strnull <- strnullvec[2]
+
+if (length(lines2)==0) m3 <- zerorows_inasciifile(vnvec,dtvec) 
+else {
+
+list_strvec <- strsplit(lines2,delimplus)
+m1 <- data.frame(list_strvec,stringsAsFactors=FALSE)
+names(m1) <- 1:length(list_strvec)
+m2 <- t(m1)
+colnames(m2) <- vnvec
+m3 <- data.frame(m2,stringsAsFactors=FALSE)
+
+for(i in 1:length(dtvec)) {
+ if      (dtvec[i]=="int") m3[[i]] <- as.integer(m3[[i]])
+ else if (dtvec[i]=="flo") m3[[i]] <- as.numeric(m3[[i]])
+ else if (dtvec[i]=="str") m3[[i]] <- strnullcode_apply(m3[[i]],strnull)
+}
+
+}   # end else block
+
+m3
+}   # end function read_ascii_datafile()
+
+
+########################################################
+
+
+write_ascii_datafile <- function(df1,outputfilename)  {
+
+numcol <- length(df1)
+numrow <- length(df1[[1]])
+vnvec <- names(df1)
+dtvec <- character()
+strlenvec <- integer()
+for (i in 1:numcol) {
+  c <- class(df1[[i]])
+  if (c=="integer")        dtvec[i] <- "int" 
+  else if (c=="numeric")   dtvec[i] <- "flo"
+  else if (c=="character") dtvec[i] <- "str"
+  else if (c=="factor")    dtvec[i] <- "str"
+
+  if (c=="character") strlenvec <- c(strlenvec,max(nchar(df1[[i]]))) 
+  else if (c=="factor") strlenvec <- c(strlenvec,max(nchar(levels(df1[[i]]))))
+}
+
+# June 2011, add use of chartr() and tolower() so Kid.age becomes kid_age , acceptable vname spell
+vnstr1 <- paste(vnvec,sep="",collapse=" ")
+vnstr <- tolower(chartr(".","_",vnstr1))
+
+dtstr <- paste(dtvec,sep="",collapse=" ")
+strlenvec2 <- as.character(strlenvec)
+strlenstr <- paste(strlenvec2,sep="",collapse=" ")
+delimstr <- "delimiter |"
+strnullstr <- "strnullflag "
+
+header1 <- "{COLSPECS-THISLINE}, "
+header2 <- paste(header1,vnstr,sep="",collapse="")
+header9 <- paste(header2,dtstr,strlenstr,delimstr,strnullstr,sep=" , ",collapse="")
+
+df2 <- df1 
+for (i in 1:numcol) {
+  df2[[i]] <- as.character(df2[[i]])
+  # June 2011: also for str this block, to do NA to blank 
+  #   so add    dtvec[i]=="str" 
+  if (dtvec[i]=="int" | dtvec[i]=="flo" | dtvec[i]=="str") 
+   { v <- df2[[i]] 
+     for (j in 1:length(v)) 
+       if (is.na(v[j])) v[j] <- "" 
+     df2[[i]] <- v
+   }
+}
+
+
+
+
+df3 <- as.matrix(df2)
+
+lines <- header9
+for (k in 1:nrow(df3))
+  lines[k+1] <- paste(df3[k,],sep="",collapse="|")
+
+writeLines(lines,outputfilename)
+
+}    # end function write_ascii_datafile()
+
+
+
+##############################################################
+
+
+determine_intcatvnames <- function(df1,catvnames) {
+vlist <- names(df1)
+dlist <- character()
+intcatvnames <- character()
+for (i in 1:length(df1)) dlist[i] <- class(df1[[i]])
+for (i in 1:length(df1)) 
+  if (dlist[i]=="integer" & vlist[i] %in% catvnames) 
+    intcatvnames <- c(intcatvnames,vlist[i])
+intcatvnames
+}
+
+dataframe_with_factors <- function(df1,catvnames) {
+df2 <- df1 
+for (v in names(df2)) 
+  if (v %in% catvnames) 
+    df2[[v]] <- as.factor(df2[[v]])
+df2
+}
+
+
+
+
+
+
+
+
+
+
+

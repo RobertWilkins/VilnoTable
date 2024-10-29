@@ -1,0 +1,76 @@
+
+### Copyright 2023 : Robert Wilkins, graduated from Newton North High School 
+###                  in 1984, in Massachusetts, USA 
+
+
+
+library(gmodels)
+
+statvarnames_pw <- c("est_pw","err_pw","t_pw","df_pw","pval_pw")
+
+pairwise_lm <- function(c1,c2,modelobj)
+{
+if (c1==c2) return(as.numeric(c(NA,NA,NA,NA,NA)))
+v <- c(-1,1)
+names(v) <- c(c1,c2)
+as.numeric(estimable(modelobj,v))
+}
+
+
+
+effect_str_to_vec <- function(s) 
+{
+ss1 <- strsplit(s,"\\:")
+ss2 <- ss1[[1]] 
+ss2
+}
+
+
+doublecolnames <- function(v)
+{
+if (length(v)==0) v3 <- character() 
+else {
+  v1 <- paste(v,"_1",sep="")
+  v2 <- paste(v,"_2",sep="")
+  v3 <- c(v1,v2)
+}
+v3
+}
+
+
+
+
+
+
+complexlevel_as_str <- function(vnames,dtypes,catlevels)
+{
+t <- character()
+cl_ctr <- 1
+for(i in 1:length(vnames)) {
+ if (dtypes[i]=="factor") {
+   t[i] <- paste(vnames[i],catlevels[cl_ctr],sep="",collapse="") 
+   cl_ctr <- cl_ctr+1 
+  }
+ else {
+   t[i] <- vnames[i] 
+  }
+}
+tt <- paste(t,sep="",collapse=":")
+}
+
+
+
+
+
+
+factorsonly <- function(namesvec,dtypevec)
+{
+t <- character()
+for(i in 1:length(namesvec)) {
+  if (dtypevec[i]=="factor") t <- c(t,namesvec[i])
+ }
+t
+}
+
+
+

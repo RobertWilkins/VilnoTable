@@ -1,0 +1,42 @@
+
+### Copyright 2023 : Robert Wilkins, graduated from Newton North High School 
+###                  in 1984, in Massachusetts, USA 
+
+
+
+
+best_format_effect <- function(w) {
+w2 <- strsplit(w,"\\:")
+w3 <- w2[[1]]
+w4 <- sort(w3)
+w5 <- paste(w4,sep="",collapse=":")
+w5
+}   # end function best_format_effect()
+
+
+
+
+
+param_matching <- function(desiredparams,returnedparams) {
+desired <- character()
+for (i in 1:length(desiredparams))
+  desired[i] <- best_format_effect(desiredparams[i])
+
+ret <- list()
+for (i in 1:length(returnedparams))  ret[[i]] <- character()
+for (i in 1:length(returnedparams))
+  for (j in 1:length(returnedparams[[i]]))
+    ret[[i]][j] <- best_format_effect(returnedparams[[i]][j])
+
+found <- list()
+for (i in 1:length(desiredparams))  found[[i]] <- integer()
+
+for (i in 1:length(desiredparams))
+  for (j in 1:length(ret))
+    { index <- match(desired[i],ret[[j]]) 
+      found[[i]][j] <- index    # index-location or NA , use is.na() to check
+    }
+
+names(found) <- desiredparams
+found
+}     # end function param_matching()

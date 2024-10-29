@@ -1,0 +1,18 @@
+
+### Copyright 2023 : Robert Wilkins, graduated from Newton North High School 
+###                  in 1984, in Massachusetts, USA 
+
+
+chi_wrapper <- function(chiobj) {
+df1a <- list()
+df1a[["chisqvalue"]] <- numeric()
+df1a[["pvalue"]] <- numeric()
+df1a[["pvalue"]][1] <- chiobj$p.value
+df1a[["chisqvalue"]][1] <- chiobj$statistic
+df1 <- data.frame(df1a,stringsAsFactors=FALSE) 
+g <- list()
+g[["chisqpval"]] <- list()
+g[["chisqpval"]][["voidparam"]] <- df1 
+g
+}
+

@@ -1,0 +1,188 @@
+
+### Copyright 2023 : Robert Wilkins, graduated from Newton North High School 
+###                  in 1984, in Massachusetts, USA 
+
+
+
+# setwd("/home/robert/tallinn/Rprep_2009/work/d")
+
+# data1 <- read.table("dat1.txt")
+# print(data1)
+# lm0 <- lm( y ~ A + B + B*A + v1 + A*B*v1 , data=data1)
+
+
+
+lm_wrapper <- function(lm1,intcatvnames)  {
+
+entire <- list()
+cc <- coef(lm1)
+dc <- dummy.coef(lm1)
+sm1a <- summary(lm1)
+sc <- sm1a$coefficients
+ff <- sm1a$fstatistic 
+coef_names <- rownames(sc)
+mod <- lm1$model
+modlist <- colnames(mod)
+datatypes <- character()
+datatypes["(Intercept)"] <- "(Intercept)" 
+
+vnamespec <- list()
+for(vn in modlist) {
+ vnamespec[[vn]] <- list() 
+ dat <- mod[[vn]] 
+ datatypes[vn] <- class(dat)
+ vnamespec[[vn]][["type"]] <- class(dat) 
+ if (is.factor(dat)) vnamespec[[vn]][["rnge"]] <- levels(dat) 
+}
+
+
+vnamespec[["(Intercept)"]] <- list() 
+vnamespec[["(Intercept)"]][["type"]] <- "(Intercept)"
+
+#################################################
+
+effect_vec <- list()
+effect_dtvec <- list()
+effect_factorlist <- list()
+effect_level <- list()
+effect_level_actual <- list()
+level_effect <- list()
+level_as_vec <- list()
+
+for( w in names(dc) ) effect_vec[[w]] <- effect_str_to_vec(w)
+
+for( w in names(effect_vec) )  {
+ wvec <- effect_vec[[w]] 
+ dtvec <- datatypes[wvec] 
+ effect_dtvec[[w]] <- dtvec 
+ effect_factorlist[[w]] <- factorsonly( wvec , dtvec )
+ effect_level[[w]] <- character()
+ effect_level_actual[[w]] <- character()
+ simple_c <- names(dc[[w]])
+ for( lev1 in simple_c ) {
+   lev2 <- effect_str_to_vec(lev1) 
+   combolevel <- complexlevel_as_str( wvec , dtvec , lev2 )
+   level_effect[[combolevel]] <- w 
+   effect_level[[w]] <- c(effect_level[[w]] , combolevel )
+   level_as_vec[[combolevel]] <- lev2 
+ }
+}
+
+
+for(coef in coef_names)  {
+ eff <- level_effect[[coef]] 
+ effect_level_actual[[eff]] <- c(effect_level_actual[[eff]],coef)
+}
+
+
+#########################################################
+
+
+#################### for pairwise 
+
+entire$pwise <- list()
+for(eff in names(effect_level_actual)) {
+ clevvec <- effect_level_actual[[eff]] 
+ dfpre <- list()
+ catnames <- effect_factorlist[[eff]]
+ if (length(catnames)==0) next 
+ catnamesextra <- doublecolnames(catnames)
+
+ catnames_int <- intersect(catnames,intcatvnames)
+ catnamesextraINT <- doublecolnames(catnames_int)
+
+ varnames <- c( catnamesextra , statvarnames_pw )
+ numcol <- length(varnames)
+ for( i in 1:length(catnamesextra)) dfpre[[i]] <- character() 
+ for( i in (length(catnamesextra)+1):numcol) dfpre[[i]] <- numeric() 
+ names(dfpre) <- varnames 
+ 
+ for(c1 in clevvec) {
+  for(c2 in clevvec) {
+   clev1 <- level_as_vec[[c1]]
+   clev2 <- level_as_vec[[c2]]
+   row <- list()
+   # test list/vec concatenate !!! 
+   row <- c(row,clev1)
+   row <- c(row,clev2)
+   statlist <- pairwise_lm(c1,c2,lm1)
+   row <- c(row,statlist)
+   for(i in 1:numcol) 
+    dfpre[[i]] <- c(dfpre[[i]],row[[i]])
+  }
+ }
+
+ for (v in catnamesextraINT) dfpre[[v]] <- as.integer(dfpre[[v]])  
+ entire$pwise[[eff]] <- data.frame( dfpre , stringsAsFactors=FALSE ) 
+}
+
+
+###############################################################################
+
+############### for each coefficient 
+
+
+entire$coef <- list()
+for(eff in names(effect_level_actual)) {
+ clevvec <- effect_level_actual[[eff]] 
+ dfpre <- list()
+ catnames <- effect_factorlist[[eff]]
+ len1 <- length(catnames)
+
+ catnames_int <- intersect(catnames,intcatvnames)
+
+ varnames <- c( catnames , c("est","err_c","t_c","pval_c"))
+ numcol <- length(varnames)
+ if (length(catnames)>0)
+   for( i in 1:length(catnames)) dfpre[[i]] <- character() 
+ for( i in (length(catnames)+1):numcol) dfpre[[i]] <- numeric() 
+ names(dfpre) <- varnames 
+ 
+ for(c1 in clevvec) {
+   clev1 <- level_as_vec[[c1]]
+   row <- list()
+   # test list/vec concatenate !!! 
+   if ( length(catnames)>0 ) row <- c(row,clev1)
+   statlist <- sc[c1,]
+   row <- c(row,statlist)
+   for(i in 1:numcol) 
+    dfpre[[i]] <- c(dfpre[[i]],row[[i]])
+ }
+ 
+ for (v in catnames_int) dfpre[[v]] <- as.integer(dfpre[[v]])
+ entire$coef[[eff]] <- data.frame( dfpre , stringsAsFactors=FALSE ) 
+}
+
+########################################################
+
+################################### just the f-statistic 
+
+fpval <- pf(ff[1],ff[2],ff[3],lower.tail=FALSE)
+fhold <- list()
+fhold$fvalue <- ff[1] 
+fhold$numerator_df <- ff[2] 
+fhold$denominator_df <- ff[3] 
+fhold$pvalue <- fpval 
+
+entire$fstats <- list()
+entire$fstats$voidparam <- data.frame(fhold)
+
+########################################
+
+
+############################ end of function 
+entire 
+}
+
+
+
+
+# pw <- linearmodel_process(lm0) 
+
+
+
+
+
+
+
+

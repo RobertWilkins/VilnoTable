@@ -1,0 +1,181 @@
+
+### Copyright 2023 : Robert Wilkins, graduated from Newton North High School 
+###                  in 1984, in Massachusetts, USA 
+
+
+
+# data1 <- read.table("/home/robert/tallinn/Rprep_2009/work/d/dat1.txt",
+#                     stringsAsFactors=FALSE)
+# sortvec <- c("A","B")
+
+# sortv1 <- "A"
+# sortv2 <- c("B","A")
+
+# data1resort1 <- data1[do.call(order,data.frame(data1[,sortv1])),]
+# data1resort2 <- data1[do.call(order,data.frame(data1[,sortv2])),]
+
+# try data.frame(data1[,sortbla]) 
+# i need data1[,"A"] interpret as a data frame , not a character vector 
+
+#####################################################
+
+# ?? can this function handle factor datatype ?  (today=Nov 9)
+
+divide_dataframe  <- function(df1,comp)  {
+contain <- list()
+catlevels <- list()
+
+if (length(comp)==0) 
+  { contain[[1]] <- df1 
+    catlevels[[1]] <- list()
+  }
+else {     # if at least one bylist-column 
+
+numrow <- length(df1[[1]])
+numcol <- length(df1)
+dtvec <- character()
+for (i in 1:numcol) dtvec <- c(dtvec,class(df1[[i]]))
+
+current <- list()
+for(i in 1:numcol)
+  {  if (dtvec[i]=="character") current[[i]] <- character() 
+     else if (dtvec[i]=="integer") current[[i]] <- integer()
+     else if (dtvec[i]=="numeric") current[[i]] <- numeric()
+     else if (dtvec[i]=="factor") current[[i]] <- factor(integer(),levels(df1[[i]]))
+  }
+w <- 1
+names(current) <- names(df1)
+
+if (numrow>0) {
+  catlevels[[1]] <- list()
+  for (h in 1:length(comp)) 
+    catlevels[[1]][[h]] <- df1[[comp[h]]][1] 
+  numlevelp=2 
+  for (i in 1:numcol) current[[i]][w] <- df1[[i]][1] 
+  w <- w+1
+}
+
+
+if (numrow>1) {
+for (k in 2:numrow) {
+
+ canstay <- TRUE 
+ # July 2011 : if (B!=B) when nulls possible causes crash, fix it 
+ for (sortvn in comp) {
+   if (is.na(df1[[sortvn]][k]) || is.na(df1[[sortvn]][k-1])) {
+     if (!is.na(df1[[sortvn]][k]) || !is.na(df1[[sortvn]][k-1])) canstay <- FALSE
+   }
+   else 
+     if (df1[[sortvn]][k]!=df1[[sortvn]][k-1]) canstay <- FALSE 
+ }
+
+ if (canstay==FALSE) {
+ catlevels[[numlevelp]] <- list()
+ for (h in 1:length(comp)) 
+   catlevels[[numlevelp]][[h]] <- df1[[comp[h]]][k] 
+ numlevelp=numlevelp+1
+ }
+
+ if (canstay==FALSE) {
+   m <- length(contain) 
+   contain[[m+1]] <- data.frame(current,stringsAsFactors=FALSE)
+   current <- list()
+   for(i in 1:numcol)
+     { if (dtvec[i]=="character") current[[i]] <- character() 
+       else if (dtvec[i]=="integer") current[[i]] <- integer()
+       else if (dtvec[i]=="numeric") current[[i]] <- numeric()
+       else if (dtvec[i]=="factor") current[[i]] <- factor(integer(),levels(df1[[i]])) 
+     }
+   w <- 1
+   names(current) <- names(df1) 
+ }
+ for (i in 1:numcol) current[[i]][w] <- df1[[i]][k]
+ w <- w+1
+}    #   end for(k in 2:numrow) loop
+}    #   end if(numrow>1) preceding this loop
+
+if (numrow>0) {
+  m <- length(contain) 
+  contain[[m+1]] <- data.frame(current,stringsAsFactors=FALSE)
+}
+
+}  # end big else block , for at least one bylist-column 
+
+contain2 <- list()
+contain2[[1]] <- contain 
+contain2[[2]] <- catlevels
+
+############# end function divide_dataframe
+contain2 
+}
+
+
+
+
+##################################################################
+##################################################################
+
+
+
+recombine_dataframes <- function(dflist,comp,catlevels) {
+
+if (length(comp)==0) df <- dflist[[1]] 
+else {       # at least one sort column
+
+rightvnames <- names(dflist[[1]])
+newvnlist <- c(comp,rightvnames)
+numgrp <- length(dflist)
+dflist2 <- list()
+numbyvar <- length(comp)
+
+for (k in 1:numgrp) {
+nrow <- length(dflist[[k]][[1]])
+contain1 <- list()
+for (h in 1:numbyvar) contain1[[h]] <- rep(catlevels[[k]][[h]],nrow)
+names(contain1) <- comp 
+contain1b <- data.frame(contain1,stringsAsFactors=FALSE)
+dflist2[[k]] <- cbind(contain1b,dflist[[k]])
+}
+
+df <- do.call("rbind",dflist2)
+}           # at least one sort column
+
+df 
+}    # end function recombine_dataframes
+
+
+#######################################
+
+#### this is just a test function for the moment 
+truncate_df <- function(dflist,numtoss) {
+dflist2 <- list() 
+numgrp <- length(dflist)
+names1 <- names(dflist[[1]])
+numcol <- length(names1)
+names2 <- names1[(numtoss+1):numcol]
+
+for (k in 1:numgrp) dflist2[[k]] <- dflist[[k]][,names2] 
+dflist2
+}
+
+############################################
+
+# g <- divide_dataframe(data1,sortvec)
+# g1 <- g[[1]]
+# g2 <- g[[2]]
+
+
+
+
+# g1b <- truncate_df(g1,2)
+
+# y <- recombine_dataframes(g1b,g2,sortvec)
+
+
+
+
+
+# gg <- by(data1[,c("y","v1")],INDICES=list(data1$A,data1$B),FUN=identity)
+
+
+

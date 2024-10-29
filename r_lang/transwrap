@@ -1,0 +1,37 @@
+
+### Copyright 2023 : Robert Wilkins, graduated from Newton North High School 
+###                  in 1984, in Massachusetts, USA 
+
+
+
+
+transpose_stat_wrapper_output <- function(res1,desiredparams,bylist,clevs) {
+numgrp <- length(res1)
+res3 <- list()
+
+for (infotype in names(desiredparams)) {
+returnedparams <- list()
+res2 <- list()
+res3[[infotype]] <- list()
+
+for (k in 1:numgrp) returnedparams[[k]] <- names(res1[[k]][[infotype]])
+foundindex <- param_matching(desiredparams[[infotype]],returnedparams)
+
+for (param1 in desiredparams[[infotype]]) {
+res2[[param1]] <- list()
+for (k in 1:numgrp) {
+  j <- foundindex[[param1]][[k]] 
+  res2[[param1]][[k]] <- res1[[k]][[infotype]][[j]]
+ }
+}
+
+for (param1 in desiredparams[[infotype]])
+  res3[[infotype]][[param1]] <- recombine_dataframes(res2[[param1]],bylist,clevs)
+
+}   # end large loop
+
+res3 
+}   # end function transpose_stat_wrapper_output()
+
+
+
