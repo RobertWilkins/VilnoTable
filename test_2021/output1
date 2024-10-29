@@ -1,0 +1,26 @@
+Table E1:  N and % simple example
+                         TOPTOP     
+                     _______________
+                           trt      
+                     _______________
+                        A       B   
+                     _______ _______
+                     n   %   n   %  
+                     _ _____ _ _____
+TOPTOP                              
+  bodysys                           
+    CNS                             
+      prefterm                      
+        Headache     3 50           
+        Jitters      1 16.67        
+    Cardio                          
+      prefterm                      
+        MI           1 16.67 1 16.67
+        Stroke               1 16.67
+    Gastro                          
+      prefterm                      
+        Bellyache            1 16.67
+    Skeletal                        
+      prefterm                      
+        Broken_Foot          2 33.33
+        Fracture     1 16.67 1 16.67

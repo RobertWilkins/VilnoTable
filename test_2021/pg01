@@ -1,0 +1,20 @@
+
+title "Table A3: AE table, with chi-square (75-patient dbase)" ;
+
+directoryref a="/home/robert/test" ;
+
+
+inputdset asc a/patinfo3 patid trt 1*(patid) ;
+inputdset asc a/advevt3a patid bodysys prefterm ;
+thing pat uniqval(patid) a/patinfo3 ;
+n~n(pat) ;
+
+printto "/home/robert/test/outp01" ;
+denom trt ;
+
+model chisq(thisrow?*trt*n)
+
+col (trt all)*(n %) pvalue ;
+row all have(a/advevt3a) bodysys*(all nothave prefterm) ;
+
+
