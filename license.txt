@@ -1,0 +1,61 @@
+This is a copy of the same license that Javascript DRAW has been available under since
+2023.
+While this license is not tailored for Vilno Table, Vilno Table is available under 
+this license for a limited time period. Vilno Table is available under this license 
+UNTIL a new version of Vilno Table is available with a different license and not this
+license.
+
+This is an effort to balance two priorities: I want to encourage various research 
+groups, obviously in academia, but also in the pharmaceutical and biotechnology industry, 
+to experiment with this product design. Also, Vilno Table provides financial benefits 
+to pharmaceutical and biotechnology corporations, and a software license in the future 
+will reflect that.
+
+The rest of the license follows, the same license that has been available for Javascript 
+DRAW in 2022, 2023 , and today :
+
+###########################################################################
+
+A "Large Entity" is a corporation with two million USA dollars or more in annual revenue. 
+A "Small Entity" is an individual or group of people or non-profit or corporation that is 
+not a "Large Entity".
+Unless otherwise clarified, in this license, when I say "you", I am assuming you are a
+small entity.
+
+
+If you are a "Small Entity", this license grants you permission to use this 
+Javascript DRAW tool, a software product, free of charge. You can kick the tires, you can
+ test it, you can learn it, you can use it for teaching, you can use it while providing 
+web development services for which you are paid or by which you make a profit.
+
+You can sell services related to this product, you cannot re-sell (at a non-zero price) 
+the product to other small entities.
+
+You may not re-sell the product to large entities without contacting me first. 
+You may not give the product to large entities either.
+
+At this time, no all-purpose license for large entities has been drafted (not yet). 
+Until then, you are free to use the product to sell web site development services to 
+large entities. 
+You are not responsible at this time for maintaining customer records that distinguish 
+between small entities and large entities.
+
+Redistribution of the code, or any part of the code, without the copyright information 
+that fully identifies the author and owner of the code is a very serious copyright 
+infringement.
+
+In general, you are free to use this product while providing web development services 
+to other small entities.
+
+At this time, you may use this product while providing web development services to large 
+entities, however future licenses I attach to the Javascript DRAW product might clarify 
+the conditions under which you (a small entity) provide services to a large entity. 
+Such clarifications will not be retroactive.
+
+If you are a large entity, this license grants you no permissions. This license is for 
+small entities.
+
+If you are a large entity, you may use this software only for the purpose of 
+"kicking the tires", for the purpose of experimentation and testing. Beyond that purpose 
+you need another license, which will be available at a reasonable price.
+
